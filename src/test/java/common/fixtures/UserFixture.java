@@ -1,0 +1,14 @@
+package common.fixtures;
+
+import common.builders.UserBuilder;
+import common.models.User;
+
+public class UserFixture {
+
+    public static User defaultUser(){
+        return new UserBuilder()
+                .withEmail("sander.martens+webshop1@polteq.com")
+                .withPassword("fsqfqfq!")
+                .build();
+    }
+}
