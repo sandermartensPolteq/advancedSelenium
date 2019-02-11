@@ -10,6 +10,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Shooter {
 
+    private static String fileSeperator = System.getProperty("file.separator");
+    private static String screenshotPath = System.getProperty("user.dir") +fileSeperator+ "screenshots";
+
     public static void takeScreenshot(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-mm-yyyy_HHmmssSS");
         LocalDateTime now = LocalDateTime.now();
@@ -17,11 +20,17 @@ public class Shooter {
     }
 
     public static void takeScreenshot(String screenShotName){
+        File screenshotDirectory = new File(screenshotPath);
+        if(!screenshotDirectory.exists()){
+            screenshotDirectory.mkdir();
+        }
+
         try {
             Robot r = new Robot();
             Rectangle capture = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
             BufferedImage image = r.createScreenCapture(capture);
-            ImageIO.write(image, "jpg", new File("./screenshots/"+screenShotName+".png"));
+            File file = new File(screenshotPath, screenShotName+".jpg");
+            ImageIO.write(image, "jpg", file);
         } catch (AWTException | IOException e) {
             e.printStackTrace();
         }

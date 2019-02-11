@@ -6,7 +6,7 @@ import org.testng.annotations.AfterMethod;
 
 public class TestTemplate extends BasePage {
 
-    @AfterMethod
+    @AfterMethod()
     public void after(){
         DriverProvider.close();
     }

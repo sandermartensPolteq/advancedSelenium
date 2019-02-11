@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="common.logging.TestListener" />
+    </listeners>
+    <parameter name="browserType" value="chrome" />
+    <parameter name="baseUrl" value="https://techblog.polteq.com/testshop/index.php" />
+    <test name="Admin Tests">
+        <classes>
+            <class name="tests.defaultTest" />
+        </classes>
+    </test>
+</suite>

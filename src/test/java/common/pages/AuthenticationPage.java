@@ -1,7 +1,6 @@
 package common.pages;
 
 import org.openqa.selenium.By;
-import sun.management.BaseOperatingSystemImpl;
 
 public class AuthenticationPage extends BasePage {
 
@@ -10,16 +9,19 @@ public class AuthenticationPage extends BasePage {
     private final By btnSignIn = By.id("SubmitLogin");
 
     public AuthenticationPage fillEmail(String email){
+        addLogging("Fill email address");
         fill(txtEmail, email);
         return this;
     }
 
     public AuthenticationPage fillPassword(String password){
+        addLogging("Fill password");
         fill(txtPassword, password);
         return this;
     }
 
     public AuthenticationPage clickSignIn(){
+        addLogging("Click 'Sign in'");
         click(btnSignIn);
         return this;
     }
