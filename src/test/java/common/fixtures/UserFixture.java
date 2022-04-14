@@ -10,7 +10,7 @@ public class UserFixture {
                 .withFirstname("Firstname")
                 .withLastname("lastName")
                 .withEmail("sander.martens+webshop1@polteq.com")
-                .withPassword("Test1234!")
+                .withPassword("dfsdfs")
                 .build();
     }
 }
